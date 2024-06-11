@@ -2,6 +2,7 @@ package com.free2go.hospital.user.domain;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
@@ -32,6 +33,12 @@ public class User implements UserDetails {
     @ElementCollection
     @Column(name = "roles")
     private List<String> roles = new ArrayList<>();
+
+    @Builder
+    public User(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

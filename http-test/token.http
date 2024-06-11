@@ -1,0 +1,15 @@
+### 계정 생성하기
+POST http://localhost:8080/signup
+Content-Type: application/json
+
+{
+  "email": "free2go.sean@gmail.com",
+  "password": "1q2w3e4r"
+}
+
+
+### access token test
+POST http://localhost:8080/tests/access-token/1
+
+### refresh token test
+POST http://localhost:8080/tests/refresh-token/1
